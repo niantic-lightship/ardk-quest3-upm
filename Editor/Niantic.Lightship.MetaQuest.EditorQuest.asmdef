@@ -1,0 +1,38 @@
+{
+    "name": "Niantic.Lightship.MetaQuest.Editor",
+    "rootNamespace": "Niantic.Lightship.MetaQuest.Editor",
+    "references": [
+        "GUID:ba273e4976c0c4f15b87d29b2a1402cc",
+        "GUID:4847341ff46394e83bb78fbd0652937e",
+        "GUID:96aa6ba065960476598f8f643e7252b6",
+        "GUID:8efef0e48627b4af5a28950b21575514",
+        "GUID:c77f0578cedf0412399b9fab436cd451",
+        "GUID:f68571b73246ce44e903d7128579af58",
+        "GUID:95054a9710b0f114a85f6ced6b7f891c",
+        "GUID:f9fe0089ec81f4079af78eb2287a6163",
+        "GUID:4ddd23ea56a3a40f0aa0036d1624a53e",
+        "GUID:15fc0a57446b3144c949da3e2b9737a9"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "",
+            "define": "MODULE_URP_ENABLED"
+        },
+        {
+            "name": "com.nianticlabs.lightship.sharedar",
+            "expression": "",
+            "define": "MODULE_SHAREDAR_ENABLED"
+        }
+    ],
+    "noEngineReferences": false
+}

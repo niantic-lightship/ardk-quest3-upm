@@ -1,0 +1,4 @@
+Samples~/Samples/VPS/VPSLocalisationLocations/Another[[:space:]]Little[[:space:]]Free[[:space:]]Library[[:space:]]-[[:space:]]Fulton.asset filter=lfs diff=lfs merge=lfs -text
+Samples~/Samples/VPS/VPSLocalisationLocations/Chairs.asset filter=lfs diff=lfs merge=lfs -text
+Samples~/Samples/VPS/VPSLocalisationLocations/The[[:space:]]Gandhi[[:space:]]Monument[[:space:]]at[[:space:]]SF.asset filter=lfs diff=lfs merge=lfs -text
+Samples~/Samples/VPS/VPSLocalisationLocations/The[[:space:]]Forrest.asset filter=lfs diff=lfs merge=lfs -text

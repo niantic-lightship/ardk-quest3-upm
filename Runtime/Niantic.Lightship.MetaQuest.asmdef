@@ -1,0 +1,38 @@
+{
+    "name": "Niantic.Lightship.MetaQuest",
+    "rootNamespace": "Niantic.Lightship.MetaQuest",
+    "references": [
+        "Niantic.Lightship.AR",
+        "Oculus.VR",
+        "Unity.XR.ARFoundation",
+        "Unity.XR.ARSubsystems",
+        "Unity.XR.Management",
+        "Unity.XR.Management.Editor",
+        "Unity.XR.OpenXR",
+        "Unity.XR.OpenXR.Editor",
+        "Unity.XR.OpenXR.Features.MetaQuestSupport",
+        "Unity.XR.MetaOpenXR",
+        "meta.xr.mrutilitykit",
+        "Unity.XR.CoreUtils",
+        "Unity.InputSystem",
+        "Unity.RenderPipelines.Universal.Runtime"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "",
+            "define": "MODULE_URP_ENABLED"
+        }
+    ],
+    "noEngineReferences": false
+}

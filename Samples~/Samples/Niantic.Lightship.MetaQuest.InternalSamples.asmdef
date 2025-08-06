@@ -1,0 +1,35 @@
+{
+    "name": "Niantic.Lightship.MetaQuest.InternalSamples",
+    "rootNamespace": "Niantic.Lightship.MetaQuest.InternalSamples",
+    "references": [
+        "GUID:ebf051e8066a449148e51cebff289cdd",
+        "GUID:65de4b6fabc0941c5adc373aad7ea5b5",
+        "GUID:ba273e4976c0c4f15b87d29b2a1402cc",
+        "GUID:dc960734dc080426fa6612f1c5fe95f3",
+        "GUID:fe685ec1767f73d42b749ea8045bfe43",
+        "GUID:e40ba710768534012815d3193fa296cb",
+        "GUID:a9420e37d7990b54abdef6688edbe313",
+        "GUID:92703082f92b41ba80f0d6912de66115",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:4847341ff46394e83bb78fbd0652937e",
+        "GUID:1491147abca9d7d4bb7105af628b223e"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.nianticlabs.lightship.sharedar",
+            "expression": "",
+            "define": "MODULE_SHAREDAR_ENABLED"
+        }
+    ],
+    "noEngineReferences": false
+}

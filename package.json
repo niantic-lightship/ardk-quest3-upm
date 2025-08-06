@@ -1,0 +1,40 @@
+{
+  "name": "com.nianticlabs.lightship.metaquest",
+  "displayName": "Niantic Lightship Meta Plugin",
+  "version": "3.15.0",
+  "unity": "6000.0",
+  "description": "Lightship ARDK adapter for Meta devices",
+  "keywords": [
+    "meta",
+    "ar",
+    "augmented",
+    "xr",
+    "reality",
+    "niantic"
+  ],
+  "dependencies": {
+    "com.unity.xr.management": "4.4.0",
+    "com.unity.xr.openxr": "1.14.0",
+    "com.unity.xr.meta-openxr": "2.1.0",
+    "com.meta.xr.mrutilitykit": "76.0.1",
+    "com.nianticlabs.lightship": "3.15.0",
+    "com.unity.xr.arfoundation": "6.1.0",
+    "com.unity.inputsystem": "1.6.3"
+  },
+  "author": {
+    "name": "Niantic Spatial, Inc",
+    "email": "support@lightship.dev",
+    "url": "https://lightship.dev/"
+  },
+  "documentationUrl": "https://lightship.dev/docs/ardk/",
+  "changelogUrl": "https://lightship.dev/docs/ardk/release_notes/release3.0/",
+  "licensesUrl": "https://lightship.dev/legal/terms",
+  "repository": {},
+  "samples": [
+    {
+      "displayName": "Samples",
+      "description": "Contains sample scenes that demonstrate how to use Lightship features on a Meta Quest device.",
+      "path": "Samples~/Samples"
+    }
+  ]
+}
