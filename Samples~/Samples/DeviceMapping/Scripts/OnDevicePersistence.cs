@@ -175,7 +175,7 @@ namespace Niantic.Lightship.MetaQuest.InternalSamples
             _startScanning.interactable = false;
             _statusText.text = "Look Around to create map";
             _mapper._onMappingComplete += MappingComplete;
-            float time = 5.0f;
+            float time = 10.0f;
             _mapper.RunMappingFor(time);
 
             if (_scanningAnimationPanel)

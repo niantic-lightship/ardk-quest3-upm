@@ -47,7 +47,8 @@ Shader "Hidden/UnpackDepth"
                 float3 uvw = float3(i.uv.x, 1.0 - i.uv.y, 0); // vertical flip
                 float depth = UNITY_SAMPLE_TEX2DARRAY(_MainTex, uvw).r;
 
-                // Linearize depth
+                // Convert sampled depth [0,1] to NDC depth [-1,1] and then reconstruct
+                // view-space distance using a perspective projection with near plane = 0.2
                 float ndcDepth = depth * 2.0 - 1.0;
                 float linearDepth = -0.2 / (ndcDepth - 1.0);
                 return float4(linearDepth, 0.0, 0.0, 1.0);

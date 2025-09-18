@@ -579,6 +579,7 @@ MonoBehaviour:
   _DiagnosticsEnabled: 0
   _VpsUsageMode: 0
   _VpsDebuggerEnabled: 0
+  _GpsCorrectionForContinuousLocalization: 0
 --- !u!1 &529277175
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +705,9 @@ MonoBehaviour:
 
     The
     data is stored to files on your device meaning you can now save and share local
-    maps and content.'
+    maps and content.
+
+    Click the "Scan" tab to start scanning.'
 --- !u!222 &597907626
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1305,6 +1308,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5441840105197760357, guid: 6f115ed8f5ed346e0b18b267e3082645,
+        type: 3}
+      propertyPath: m_Name
+      value: Scan
+      objectReference: {fileID: 0}
     - target: {fileID: 5523603492270958797, guid: 6f115ed8f5ed346e0b18b267e3082645,
         type: 3}
       propertyPath: m_IsActive
@@ -1373,6 +1381,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7984281668655543465, guid: 6f115ed8f5ed346e0b18b267e3082645,
+        type: 3}
+      propertyPath: m_Text
+      value: Scan
+      objectReference: {fileID: 0}
     - target: {fileID: 8443121851903171926, guid: 6f115ed8f5ed346e0b18b267e3082645,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1402,6 +1415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182525397103450156, guid: 6f115ed8f5ed346e0b18b267e3082645,
+        type: 3}
+      propertyPath: m_Name
+      value: Scan
       objectReference: {fileID: 0}
     - target: {fileID: 9182525397103450156, guid: 6f115ed8f5ed346e0b18b267e3082645,
         type: 3}

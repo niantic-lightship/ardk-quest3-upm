@@ -14,11 +14,19 @@ namespace Niantic.Lightship.MetaQuest.InternalSamples
     /// </summary>
     public sealed class CpuImageExample : MonoBehaviour
     {
+        /// <summary>
+        /// The shader property ID for the display matrix.
+        /// </summary>
+        private static readonly int s_displayMatrix = Shader.PropertyToID("_DisplayMatrix");
+
         [SerializeField]
         private AROcclusionManager _occlusionManager;
 
         [SerializeField]
         private RawImage _rawImage;
+
+        [SerializeField]
+        private Material _material;
 
         [SerializeField]
         private Text _imageInfoText;
@@ -31,6 +39,7 @@ namespace Niantic.Lightship.MetaQuest.InternalSamples
         {
             // Reset the UI elements
             _rawImage.texture = null;
+            _rawImage.material = _material;
             _imageInfoText.text = "No image available";
         }
 
@@ -61,7 +70,31 @@ namespace Niantic.Lightship.MetaQuest.InternalSamples
                  */
                 if (cpuImage.CreateOrUpdateTexture(ref _depthTexture2D))
                 {
+                    // Get the width and height of the viewport
+                    var rectTransform = _rawImage.rectTransform;
+                    var viewportWidth = (int)rectTransform.rect.width;
+                    var viewportHeight = (int)rectTransform.rect.height;
+                    var viewportOrientation = XRDisplayContext.GetScreenOrientation();
+
+                    // Calculate the display matrix for rendering the depth texture
+                    // on the RawImage UI element. The texture on Meta Quest usually
+                    // has a square resolution, so we use AffineMath directly here,
+                    // instead of CameraMath.CalculateDisplayMatrix to be able to
+                    // specify the image orientation.
+                    var displayMatrix = (AffineMath.Fit(
+                        _depthTexture2D.width,
+                        _depthTexture2D.height,
+                        ScreenOrientation.LandscapeLeft,
+                        viewportWidth,
+                        viewportHeight,
+                        viewportOrientation)
+
+                        // Flip the texture vertically to match the UI coordinate system
+                        * AffineMath.s_invertVertical).transpose;
+
+                    // Update the texture and material of the RawImage component
                     _rawImage.texture = _depthTexture2D;
+                    _rawImage.material.SetMatrix(s_displayMatrix, displayMatrix);
                     _imageInfoText.text = $"Depth Image: {cpuImage.width}x{cpuImage.height} - {cpuImage.format}";
                 }
 

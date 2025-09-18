@@ -1466,7 +1466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _occlusionManager: {fileID: 1706465314}
   _rawImage: {fileID: 2047995141}
-  _material: {fileID: 2100000, guid: fdb0beeea8e9147378b2613487fe943b, type: 2}
+  _material: {fileID: 2100000, guid: 45054167e01a143c38adb3cba26b0e6c, type: 2}
   _imageInfoText: {fileID: 597907625}
 --- !u!224 &1621136744 stripped
 RectTransform:
@@ -1596,6 +1596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _occlusionManager: {fileID: 1706465314}
   _rawImage: {fileID: 2047995141}
+  _material: {fileID: 2100000, guid: fdb0beeea8e9147378b2613487fe943b, type: 2}
   _imageInfoText: {fileID: 597907625}
 --- !u!4 &1928350160
 Transform:

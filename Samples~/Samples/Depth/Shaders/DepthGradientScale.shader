@@ -1,4 +1,4 @@
-Shader "Unlit/DepthGradient"
+Shader "Unlit/DepthGradientScale"
 {
     Properties
     {
@@ -83,9 +83,14 @@ Shader "Unlit/DepthGradient"
 
             fragment_output frag (v2f i)
             {
-                // Sample the environment depth (in meters).
+                // Sample the depth texture
                 float2 uv = float2(i.texcoord.x / i.texcoord.z, i.texcoord.y / i.texcoord.z);
-                float envDistance = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uv).r;
+                float depth = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uv).r;
+
+                // Convert sampled depth [0,1] to NDC depth [-1,1] and then reconstruct
+                // view-space distance using a perspective projection with near plane = 0.2
+                float ndcDepth = depth * 2.0 - 1.0;
+                float envDistance = -0.2 / (ndcDepth - 1.0);
 
                 half lerpFactor = (envDistance - _MinDistance) / (_MaxDistance - _MinDistance);
                 half hue = lerp(0.70h, -0.15h, saturate(lerpFactor));
@@ -181,9 +186,14 @@ Shader "Unlit/DepthGradient"
 
             fragment_output frag (v2f i)
             {
-                // Sample the environment depth (in meters).
+                // Sample the depth texture
                 float2 uv = float2(i.texcoord.x / i.texcoord.z, i.texcoord.y / i.texcoord.z);
-                float envDistance = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uv).r;
+                float depth = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uv).r;
+
+                // Convert sampled depth [0,1] to NDC depth [-1,1] and then reconstruct
+                // view-space distance using a perspective projection with near plane = 0.2
+                float ndcDepth = depth * 2.0 - 1.0;
+                float envDistance = -0.2 / (ndcDepth - 1.0);
 
                 half lerpFactor = (envDistance - _MinDistance) / (_MaxDistance - _MinDistance);
                 half hue = lerp(0.70h, -0.15h, saturate(lerpFactor));
