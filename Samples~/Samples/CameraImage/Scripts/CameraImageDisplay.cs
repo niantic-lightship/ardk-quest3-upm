@@ -5,9 +5,17 @@ using UnityEngine.XR.ARFoundation;
 
 namespace Niantic.Lightship.MetaQuest.InternalSamples
 {
+    /// <summary>
+    /// This sample demonstrates how to fetch the camera image as a texture and display it on the UI.
+    /// The camera image is a single RGB texture when the texture is run in the Unity editor. It is
+    /// made of 2 textures, representing the y and uv image planes when run on device.
+    /// </summary>
     public class CameraImageDisplay : MonoBehaviour
     {
         private static readonly int s_displayMatrix = Shader.PropertyToID("_DisplayMatrix");
+        private static readonly int s_mainTex = Shader.PropertyToID("_MainTex");
+        private static readonly int s_textureY = Shader.PropertyToID("_TextureY");
+        private static readonly int s_textureUV = Shader.PropertyToID("_TextureUV");
 
         [SerializeField]
         private ARCameraManager _cameraManager;
@@ -44,14 +52,14 @@ namespace Niantic.Lightship.MetaQuest.InternalSamples
             {
                 case 1:
                     // Assuming RGB format
-                    _rgbMaterial.SetTexture("_MainTex", args.textures[0]);
+                    _rgbMaterial.SetTexture(s_mainTex, args.textures[0]);
                     _rawImage.material = _rgbMaterial;
                     break;
 
                 case 2:
                     // Assuming YUV format
-                    _yuvMaterial.SetTexture("_TextureY", args.textures[0]);
-                    _yuvMaterial.SetTexture("_TextureUV", args.textures[1]);
+                    _yuvMaterial.SetTexture(s_textureY, args.textures[0]);
+                    _yuvMaterial.SetTexture(s_textureUV, args.textures[1]);
                     _rawImage.material = _yuvMaterial;
                     break;
 

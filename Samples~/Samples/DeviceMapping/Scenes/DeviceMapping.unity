@@ -2106,6 +2106,11 @@ MonoBehaviour:
   _placeCubeButton: {fileID: 1714710356}
   _deleteCubesButton: {fileID: 1728335740}
   _exitInGameButton: {fileID: 1282188086}
+  _cubePrefab: {fileID: 4015948696138937856, guid: 52073123b9def45869430d729f06218a,
+    type: 3}
+  _urpDefaultMaterial: {fileID: 2100000, guid: 6c1097650369c45739b2dc4798562ed8, type: 2}
+  _builtInDefaultMaterial: {fileID: 2100000, guid: 480f3df6ad255422b9ee6b73690570a1,
+    type: 2}
 --- !u!4 &1285379881
 Transform:
   m_ObjectHideFlags: 0

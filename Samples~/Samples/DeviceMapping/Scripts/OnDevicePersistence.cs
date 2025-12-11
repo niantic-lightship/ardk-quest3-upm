@@ -57,6 +57,14 @@ namespace Niantic.Lightship.MetaQuest.InternalSamples
         [SerializeField]
         private Button _exitInGameButton;
 
+        [SerializeField]
+        private GameObject _cubePrefab;
+
+        [SerializeField]
+        private Material _urpDefaultMaterial;
+        [SerializeField]
+        private Material _builtInDefaultMaterial;
+
         //files to save to
         public static string k_mapFileName = "ADHocMapFile";
         public static string k_objectsFileName = "ADHocObjectsFile";
@@ -286,8 +294,13 @@ namespace Niantic.Lightship.MetaQuest.InternalSamples
         /// </summary>
         private GameObject CreateAndPlaceCube(Vector3 localPos)
         {
-            var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
-
+            var go = Instantiate(_cubePrefab);
+            go.name = "Cube";
+            // Check for URP or HRP and assign default material
+            go.GetComponent<Renderer>().material = UnityEngine.Rendering.GraphicsSettings.defaultRenderPipeline != null &&
+                UnityEngine.Rendering.GraphicsSettings.currentRenderPipeline.GetType().ToString().Contains("UniversalRenderPipelineAsset")
+                ? _urpDefaultMaterial
+                : _builtInDefaultMaterial;
             //add it under the anchor on our map.
             _tracker.AddObjectToAnchor(go);
             go.transform.localPosition = localPos;
